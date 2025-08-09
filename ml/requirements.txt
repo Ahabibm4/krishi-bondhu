@@ -1,0 +1,11 @@
+tensorflow==2.15.0
+tensorflow-hub
+tensorflow-datasets
+pandas
+numpy
+scikit-learn
+opencv-python
+Pillow
+matplotlib
+dvc
+mlflow

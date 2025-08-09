@@ -1,0 +1,9 @@
+crop_id,crop_name_bn,crop_name_en,condition_bn,condition_en
+1,ধান,Rice,ব্লাস্ট,Blast
+2,ধান,Rice,ব্যাকটেরিয়াল ব্লাইট,Bacterial Blight
+3,টমেটো,Tomato,লেট ব্লাইট,Late Blight
+4,মরিচ,Chili,লিফ কার্ল,Leaf Curl
+5,আলু,Potato,আর্লি ব্লাইট,Early Blight
+6,পাট,Jute,স্টেম রট,Stem Rot
+7,গম,Wheat,রস্ট,Rust
+8,শাকসবজি,Vegetables,পাতার দাগ,Leaf Spot

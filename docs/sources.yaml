@@ -1,0 +1,10 @@
+sources:
+  - name: PlantVillage
+    url: https://plantvillage.psu.edu
+    license: CC BY 4.0
+  - name: Wikimedia Commons
+    url: https://commons.wikimedia.org
+    license: CC BY-SA 4.0 or CC0
+  - name: iNaturalist
+    url: https://www.inaturalist.org
+    license: CC BY-NC 4.0
