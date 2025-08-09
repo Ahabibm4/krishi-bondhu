@@ -1,0 +1,25 @@
+# Global
+.DS_Store
+Thumbs.db
+*.log
+
+# Node/JS accidental
+node_modules/
+
+# Python/ML
+ml/.venv/
+ml/__pycache__/
+ml/.ipynb_checkpoints/
+ml/mlruns/
+ml/data/
+ml/.dvc/tmp/
+ml/.dvc/cache/
+
+# Flutter/Android/iOS
+app/.dart_tool/
+app/.packages
+app/build/
+app/ios/Pods/
+app/ios/.symlinks/
+app/pubspec.lock
+
