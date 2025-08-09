@@ -7,17 +7,45 @@ on:
 jobs:
   build-android:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: app
     steps:
       - uses: actions/checkout@v4
+
+      - name: Show repo layout
+        run: |
+          ls -la
+          ls -la app || true
+
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-      - run: flutter --version
-      - run: flutter pub get
-      - run: flutter analyze
-      - run: flutter test
-      # Build debug APK to ensure it compiles; release AAB will be later
-      - run: flutter build apk --debug
+
+      - name: Detect Flutter project directory
+        run: |
+          if [ -f "pubspec.yaml" ]; then
+            echo "PROJECT_DIR=." >> $GITHUB_ENV
+          elif [ -f "app/pubspec.yaml" ]; then
+            echo "PROJECT_DIR=app" >> $GITHUB_ENV
+          else
+            echo "No pubspec.yaml found in repo root or app/." >&2
+            exit 1
+          fi
+
+      - name: Flutter version
+        run: flutter --version
+
+      - name: Pub get
+        run: flutter pub get
+        working-directory: ${{ env.PROJECT_DIR }}
+
+      - name: Analyze
+        run: flutter analyze
+        working-directory: ${{ env.PROJECT_DIR }}
+
+      - name: Test
+        run: flutter test
+        working-directory: ${{ env.PROJECT_DIR }}
+
+      - name: Build debug APK
+        run: flutter build apk --debug
+        working-directory: ${{ env.PROJECT_DIR }}
+
